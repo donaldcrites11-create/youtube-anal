@@ -66,16 +66,15 @@ if uploaded_file:
         aggfunc='sum',
         fill_value=0
     )
-    if uploaded_file:
-
+    if uploaded_file: 
     filtered_df['day'] = filtered_df['date'].dt.day_name()
 
     heatmap_data = filtered_df.pivot_table(
-        values='views',
-        index='day',
-        columns='type',
-        aggfunc='sum',
-        fill_value=0
+    values='views',
+    index='day',
+    columns='type',
+    aggfunc='sum',
+    fill_value=0
     )
     plt.figure()
     plt.imshow(heatmap_data)
