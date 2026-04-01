@@ -68,24 +68,6 @@ if uploaded_file:
         aggfunc='sum',
         fill_value=0
     )
-
-    plt.figure()
-    plt.imshow(heatmap_data)
-    plt.xticks(range(len(heatmap_data.columns)), heatmap_data.columns)
-    plt.yticks(range(len(heatmap_data.index)), heatmap_data.index)
-    plt.colorbar()
-    st.pyplot(plt)
-    
-    if uploaded_file: 
-    filtered_df['day'] = filtered_df['date'].dt.day_name()
-
-    heatmap_data = filtered_df.pivot_table(
-    values='views',
-    index='day',
-    columns='type',
-    aggfunc='sum',
-    fill_value=0
-    )
     plt.figure()
     plt.imshow(heatmap_data)
     plt.xticks(range(len(heatmap_data.columns)), heatmap_data.columns)
